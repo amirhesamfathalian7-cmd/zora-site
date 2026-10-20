@@ -1,0 +1,41 @@
+{
+  "version": "2.1.1",
+  "codeName": "بازآفرینی",
+  "releaseDate": "2026-10-20",
+  "releaseDateFa": "۲۸ مهر ۱۴۰۵",
+  "minSupported": "2.0.0",
+  "notes": [
+    "برنامه از نو ساخته شد؛ ۹۴ کتاب پایهٔ ۱ تا ۹ (چاپ ۱۴۰۵–۱۴۰۶) داخل خود برنامه است",
+    "حالت کارگاه: قلم و هایلایتر و پاک‌کن واقعی با ذخیرهٔ خودکار هر صفحه",
+    "حالت تمرکز، تخته هوشمند با کالیبراسیون لمس و رد کف دست",
+    "نشانک صفحه‌ها، ادامهٔ مطالعه و خبررسان به‌روزرسانی"
+  ],
+  "nextTeaser": "پایهٔ دهم تا دوازدهم و پرندهٔ خبررسانِ آپدیت در نسخه‌های بعدی… 🌊",
+  "downloads": [
+    {
+      "id": "setup",
+      "filename": "ZORA-Reader-Setup.exe",
+      "label": "نسخه‌ی نصبی",
+      "sub": "پیشنهاد ما",
+      "desc": "همه‌ی کتاب‌های درسی داخلش هست. نصب راحت بدون نیاز به دسترسی مدیر؛ شورتکات دسکتاپ و منوی استارت هم خودش می‌سازد.",
+      "badge": "پیشنهادی",
+      "available": true,
+      "sizeMB": 1072,
+      "url": "https://github.com/zorateeem/zora-site/releases/download/v2.1.1/ZORA-Reader-Setup.exe",
+      "sha256": "208fdfdde2be945d2b8b6d40bc7fd8ebc5a75c5639221781a1536abf2ed60dca"
+    },
+    {
+      "id": "portable",
+      "filename": "ZORA-Reader-Portable.exe",
+      "label": "نسخه‌ی پرتابل",
+      "sub": "بدون نصب",
+      "desc": "بدون نصب، بدون ردپا! فقط اجرا کن — حتی از روی فلش‌مموری؛ همراه همیشه.",
+      "badge": "بدون نصب",
+      "available": true,
+      "sizeMB": 1072,
+      "url": "https://github.com/zorateeem/zora-site/releases/download/v2.1.1/ZORA-Reader-Portable.exe",
+      "sha256": "28e5f970f5825387e10d1b7c38906d30b5480878dedab4c72c3ebbab81df179b"
+    }
+  ],
+  "anyAvailable": false
+}
