@@ -12,8 +12,9 @@
   },
   "devDependencies": {
     "electron": "22.3.27",
-    "electron-builder": "24.13.3",
-    "pdfjs-dist": "3.11.174"
+    "electron-builder": "^26.0.12",
+    "pdfjs-dist": "3.11.174",
+    "resedit": "^2.0.3"
   },
   "dependencies": {
     "adm-zip": "0.5.16"
@@ -21,6 +22,7 @@
   "build": {
     "appId": "ir.zora.reader",
     "productName": "ZORA Reader",
+    "afterPack": "scripts/afterpack.js",
     "directories": {
       "output": "dist",
       "buildResources": "assets"
@@ -29,6 +31,7 @@
       "main.js",
       "preload.js",
       "renderer/**",
+      "books/**",
       "package.json"
     ],
     "asarUnpack": [
@@ -50,7 +53,8 @@
           ]
         }
       ],
-      "icon": "assets/icon.ico"
+      "icon": "assets/icon.ico",
+      "signAndEditExecutable": false
     },
     "nsis": {
       "oneClick": false,
@@ -63,6 +67,7 @@
       "deleteAppDataOnUninstall": false
     },
     "portable": {
+      "useZip": true,
       "artifactName": "ZORA-Reader-Portable-${version}.exe"
     }
   },
