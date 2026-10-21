@@ -1,0 +1,40 @@
+{
+  "version": "1.0.0",
+  "codeName": "پروازِ اول",
+  "releaseDate": "2026-10-01",
+  "releaseDateFa": "۹ مهر ۱۴۰۴",
+  "minSupported": "1.0.0",
+  "notes": [
+    "کتاب‌خانه‌ی کامل ابتدایی، متوسطه‌ی اول و متوسطه‌ی دوم",
+    "ابزارهای یادداشت: قلم، ماژیک هایلایت و پاک‌کن",
+    "پرنده‌ی پیام‌رسان با نکته‌های علمی جذاب",
+    "پرنده‌ی ورق‌زن با انرژی و تشویق!",
+    "ساعت تمرکز و تجربه‌ی کاملاً آفلاین"
+  ],
+  "nextTeaser": "نصب حرفه‌ای قدم‌به‌قدم، شورتکات دسکتاپ و پرنده‌ی اطلاع‌رسانِ اپدیت در راه است…",
+  "downloads": [
+    {
+      "id": "setup",
+      "filename": "ZORA-Reader-Setup.exe",
+      "label": "نسخه‌ی نصبی",
+      "sub": "پیشنهاد ما",
+      "desc": "نصب راحت روی سیستم، مثل هر اپ حرفه‌ای دیگر. شورتکات دسکتاپ و منوی استارت هم خودش می‌سازد.",
+      "badge": "پیشنهادی",
+      "available": false,
+      "sizeMB": 915,
+      "url": "/api/download/ZORA-Reader-Setup.exe"
+    },
+    {
+      "id": "portable",
+      "filename": "ZORA-Reader-Portable.exe",
+      "label": "نسخه‌ی پرتابل",
+      "sub": "بدون نصب",
+      "desc": "بدون نصب، بدون ردپا! فقط اجرا کن — حتی از روی فلش‌مموری؛ همراه همیشه.",
+      "badge": "بدون نصب",
+      "available": false,
+      "sizeMB": 870,
+      "url": "/api/download/ZORA-Reader-Portable.exe"
+    }
+  ],
+  "anyAvailable": false
+}

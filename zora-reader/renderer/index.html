@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' file: data: blob:; style-src 'self' 'unsafe-inline'; img-src 'self' file: data: blob:; script-src 'self'; font-src 'self' file: data:" />
+<title>zora reader</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div id="app">
+
+  <!-- ===================== HOME ===================== -->
+  <section id="view-home" class="view">
+    <header class="topbar">
+      <div class="brand">
+        <img src="logo.png" alt="zora" class="brand-logo" draggable="false" />
+        <div class="brand-text">
+          <span class="brand-name" dir="ltr">zora <em>reader</em></span>
+          <span class="brand-sub">کتاب‌خوان هوشمند مدارس ایران</span>
+        </div>
+      </div>
+      <div class="top-actions">
+        <div id="clock" class="clock" title="ساعت و تاریخ — کلیک: تایمر تمرکز">
+          <span id="clock-time" class="clock-time">--:--</span>
+          <span id="clock-date" class="clock-date">…</span>
+        </div>
+        <button id="btn-settings" class="icon-btn" title="تنظیمات و کالیبراسیون تخته هوشمند" aria-label="تنظیمات">
+          <svg viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 1 0 12 8.5a3.5 3.5 0 0 0 0 7Zm7.4-2.6.1-.9-.1-.9 1.9-1.5-1.9-3.3-2.3.8a7 7 0 0 0-1.5-.9L15.2 3h-3.8l-.4 2.4a7 7 0 0 0-1.5.9l-2.3-.8-1.9 3.3 1.9 1.5-.1.9.1.9-1.9 1.5 1.9 3.3 2.3-.8c.5.4 1 .7 1.5.9l.4 2.4h3.8l.4-2.4c.5-.2 1-.5 1.5-.9l2.3.8 1.9-3.3-1.9-1.5Z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="hero">
+      <div class="hero-badge" dir="ltr">Read smarter. Focus deeper.</div>
+      <h1 class="hero-title">کتاب‌های درسی‌ات را <span class="grad">هوشمند</span> بخوان</h1>
+      <p class="hero-sub">همه‌ی پایه‌ها و همه‌ی کتاب‌ها، کاملاً آفلاین — با قلم، هایلایتر، پرنده‌ی نامه‌رسان و ساعت تمرکز. بدون نیاز به اینترنت، بدون نیاز به هیچ چیز دیگر.</p>
+    </div>
+
+    <h2 class="section-title">پایه‌ات را انتخاب کن</h2>
+    <div id="grades-grid" class="grades-grid" aria-label="انتخاب پایه تحصیلی"></div>
+
+    <footer class="footer">
+      <div class="footer-wave" aria-hidden="true">〰〰〰</div>
+      <p>ساخته شده توسط تیم <b dir="ltr">zora</b> <span class="bh">🌊</span><span class="bh">❤️</span></p>
+      <p class="footer-ver" id="footer-ver" dir="ltr">v—</p>
+    </footer>
+  </section>
+
+  <!-- ===================== GRADE (SUBJECTS) ===================== -->
+  <section id="view-grade" class="view hidden">
+    <header class="topbar">
+      <button id="btn-back-home" class="btn-secondary">‹ بازگشت به پایه‌ها</button>
+      <h2 id="grade-title" class="grade-title">پایه‌ی …</h2>
+      <div class="top-actions">
+        <div class="clock mini"><span id="clock-time2" class="clock-time">--:--</span></div>
+      </div>
+    </header>
+    <div class="grade-head">
+      <p class="grade-hint">روی هر درس کلیک کن تا کتابش باز شود — کاور هر درس، چهره‌ی یکی از بزرگان همان دانش است ✨</p>
+    </div>
+    <div id="subjects-grid" class="subjects-grid"></div>
+    <footer class="footer"><p>ساخته شده توسط تیم <b dir="ltr">zora</b> <span class="bh">🌊</span><span class="bh">❤️</span></p></footer>
+  </section>
+
+  <!-- ===================== READER ===================== -->
+  <section id="view-reader" class="view hidden">
+    <header class="reader-bar">
+      <div class="rb-right">
+        <button id="btn-back-grade" class="icon-btn" title="بازگشت" aria-label="بازگشت">
+          <svg viewBox="0 0 24 24"><path d="M9.3 12 15 6.3 13.6 5l-7 7 7 7L15 17.7 9.3 12Z"/></svg>
+        </button>
+        <span id="reader-title" class="reader-title">…</span>
+      </div>
+
+      <div class="rb-center">
+        <button id="tool-select" class="tool active" title="انتخاب متن (S)" aria-label="ابزار انتخاب">
+          <svg viewBox="0 0 24 24"><path d="M4 3h16l-1 2H5L4 3Zm7 5h2v11h3v2H8v-2h3V8Z"/></svg>
+        </button>
+        <button id="tool-pen" class="tool" title="قلم (P)" aria-label="قلم">
+          <svg viewBox="0 0 24 24"><path d="m16.5 3.9 3.6 3.6L8 19.7l-4.6.9.9-4.6L16.5 3.9Zm0 2.8-11 11-.3 1.3 1.3-.3 11-11-1-1Z"/></svg>
+        </button>
+        <button id="tool-marker" class="tool" title="ماژیک هایلایت (H)" aria-label="هایلایتر">
+          <svg viewBox="0 0 24 24"><path d="M12 3 5 12l4 4 7-9-4-4Zm6 15H10l2-2h6v2ZM4 17l3 3H4v-3Z"/></svg>
+        </button>
+        <button id="tool-eraser" class="tool" title="پاک‌کن (E)" aria-label="پاک‌کن">
+          <svg viewBox="0 0 24 24"><path d="m14 4 6 6-8.5 8.5H6l-3-3L14 4Zm-1.4 3.5L5.8 14.3l2 2 6.7-6.8-1.9-2Z"/></svg>
+        </button>
+        <div id="color-palette" class="palette" role="radiogroup" aria-label="رنگ ابزار"></div>
+        <div id="size-picker" class="sizes" role="radiogroup" aria-label="ضخامت"></div>
+      </div>
+
+      <div class="rb-left">
+        <button id="btn-search" class="icon-btn" title="جستجو در کتاب (Ctrl+F)" aria-label="جستجو">
+          <svg viewBox="0 0 24 24"><path d="M10 4a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm0 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm5.7 9.7L21 21l-1.4 1.4-5.3-5.3 1.4-1.4Z"/></svg>
+        </button>
+        <button id="btn-thumbs" class="icon-btn" title="تصاویر کوچک صفحات" aria-label="صفحات">
+          <svg viewBox="0 0 24 24"><path d="M4 4h7v7H4V4Zm9 0h7v7h-7V4ZM4 13h7v7H4v-7Zm9 0h7v7h-7v-7Z"/></svg>
+        </button>
+        <button id="btn-zoom-out" class="icon-btn" title="کوچک‌نمایی (-)" aria-label="کوچک‌تر">
+          <svg viewBox="0 0 24 24"><path d="M5 11h14v2H5v-2Z"/></svg>
+        </button>
+        <span id="zoom-label" class="zoom-label" dir="ltr">100%</span>
+        <button id="btn-zoom-in" class="icon-btn" title="بزرگ‌نمایی (+)" aria-label="بزرگ‌تر">
+          <svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6V5Z"/></svg>
+        </button>
+        <button id="btn-fit" class="icon-btn" title="اندازه‌ی صفحه (F)" aria-label="اندازه">
+          <svg viewBox="0 0 24 24"><path d="M4 4h6v2H6v4H4V4Zm10 0h6v6h-2V6h-4V4ZM4 14h2v4h4v2H4v-6Zm14 0h2v6h-6v-2h4v-4Z"/></svg>
+        </button>
+        <button id="btn-page-prev" class="icon-btn" title="صفحه‌ی قبل (→)" aria-label="صفحه‌ی قبل">
+          <svg viewBox="0 0 24 24"><path d="M14.7 12l-5.7-5.7L10.4 5l7 7-7 7-1.4-1.3L14.7 12Z"/></svg>
+        </button>
+        <span class="page-ind"><span id="page-cur" class="tabular">۱</span> از <span id="page-total" class="tabular">—</span></span>
+        <button id="btn-page-next" class="icon-btn" title="صفحه‌ی بعد (←)" aria-label="صفحه‌ی بعد">
+          <svg viewBox="0 0 24 24"><path d="M9.3 12 15 6.3 13.6 5l-7 7 7 7L15 17.7 9.3 12Z"/></svg>
+        </button>
+        <button id="btn-bookmark" class="icon-btn" title="نشان‌کردن این صفحه" aria-label="نشان">
+          <svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4V3Zm2 2v12.3l4-2.7 4 2.7V5H8Z"/></svg>
+        </button>
+        <button id="btn-fullscreen" class="icon-btn" title="تمام‌صفحه (F11)" aria-label="تمام‌صفحه">
+          <svg viewBox="0 0 24 24"><path d="M4 4h6v2H6v4H4V4Zm10 0h6v6h-2V6h-4V4ZM4 14h2v4h4v2H4v-6Zm14 0h2v6h-6v-2h4v-4Z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="reader-body">
+      <aside id="thumbs-panel" class="thumbs-panel hidden" aria-label="فهرست صفحات">
+        <div class="thumbs-tabs">
+          <button id="tab-thumbs" class="ttab active">صفحات</button>
+          <button id="tab-marks" class="ttab">نشان‌ها</button>
+        </div>
+        <div id="thumbs-list" class="thumbs-list"></div>
+        <div id="marks-list" class="thumbs-list hidden"></div>
+      </aside>
+      <main id="pdf-scroll" class="pdf-scroll" tabindex="0">
+        <div id="pdf-stage" class="pdf-stage">
+          <div id="pdf-canvas-wrap" class="pdf-canvas-wrap">
+            <canvas id="pdf-canvas"></canvas>
+            <canvas id="anno-canvas"></canvas>
+            <div id="text-layer" class="text-layer"></div>
+            <div id="search-layer" class="search-layer"></div>
+          </div>
+          <div id="reader-loading" class="reader-loading"><div class="spinner"></div><p>در حال باز کردن کتاب…</p></div>
+          <div id="reader-error" class="reader-error hidden"></div>
+        </div>
+      </main>
+    </div>
+
+    <!-- search bar -->
+    <div id="search-bar" class="search-bar hidden">
+      <input id="search-input" type="text" placeholder="جستجو در این کتاب…" autocomplete="off" />
+      <span id="search-count" class="search-count">۰ از ۰</span>
+      <button id="search-prev" class="icon-btn" title="قبلی">‹</button>
+      <button id="search-next" class="icon-btn" title="بعدی">›</button>
+      <button id="search-close" class="icon-btn" title="بستن (Esc)">✕</button>
+    </div>
+  </section>
+
+  <!-- ===================== OVERLAYS ===================== -->
+  <div id="calibration-overlay" class="calibration hidden" dir="rtl">
+    <div class="cal-box">
+      <h3>کالیبراسیون تخته هوشمند</h3>
+      <p id="cal-step">روی نقطه‌ی <b>۱ از ۴</b> (گوشه) کلیک کن — همان‌جایی که تصویر روی تخته تمام می‌شود.</p>
+      <div class="cal-visual"><span id="cal-dot" class="cal-dot"></span></div>
+      <div class="cal-actions">
+        <button id="cal-fine-minus" class="btn-secondary">جمع‌تر −</button>
+        <button id="cal-reset" class="btn-secondary">حذف کالیبراسیون</button>
+        <button id="cal-fine-plus" class="btn-secondary">بازتر +</button>
+      </div>
+      <button id="cal-close" class="btn-primary">پایان</button>
+    </div>
+  </div>
+
+  <div id="settings-pop" class="settings-pop hidden" dir="rtl">
+    <h3>تنظیمات</h3>
+    <button id="open-calibration" class="pop-item">🎯 کالیبراسیون تخته هوشمند</button>
+    <button id="check-updates" class="pop-item">🕊 بررسی به‌روزرسانی</button>
+    <button id="clear-annots" class="pop-item danger">🧽 پاک‌کردن همه‌ی یادداشت‌ها</button>
+    <p class="pop-ver" id="pop-ver" dir="ltr"></p>
+  </div>
+
+  <div id="focus-pop" class="focus-pop hidden" dir="rtl">
+    <h3>ساعت تمرکز</h3>
+    <div id="focus-time" class="focus-time" dir="ltr">25:00</div>
+    <div class="focus-actions">
+      <button id="focus-start" class="btn-primary">شروع</button>
+      <button id="focus-stop" class="btn-secondary">بازنشانی</button>
+    </div>
+    <p class="focus-hint">۲۵ دقیقه تمرکز، ۵ دقیقه استراحت — پرنده‌ها تشویقت می‌کنند!</p>
+  </div>
+
+  <!-- messenger bird -->
+  <div id="messenger" class="messenger hidden" role="status">
+    <div class="ms-bird" aria-hidden="true">
+      <svg viewBox="0 0 64 64"><path class="bird-body" d="M8 34c8-14 22-20 34-16 4-8 12-10 16-8-2 4-2 8-4 12 6 10 2 24-8 30-12 8-30 4-38-18Z"/><circle class="bird-eye" cx="46" cy="22" r="2.6"/><path class="bird-wing" d="M22 30c8-2 16 2 18 10-8 2-16-2-18-10Z"/><path class="bird-beak" d="M56 20l6 2-5 4-1-6Z"/></svg>
+    </div>
+    <div class="ms-bubble"><b id="ms-title">نکته‌ی علمی</b><p id="ms-text">…</p><button id="ms-close" class="ms-x" title="بستن">✕</button></div>
+  </div>
+
+  <!-- page-flip bird widget -->
+  <div id="varqo" class="varqo" title="پرنده‌ی ورق‌زن — با هر صفحه می‌چرخد!" style="display:none">
+    <div class="varqo-bird" id="varqo-bird" aria-hidden="true">
+      <svg viewBox="0 0 64 64"><path class="bird-body" d="M10 30C18 16 30 12 40 16c2-6 10-9 15-7-1 4-1 7-3 11 5 9 1 22-9 27-11 6-27 2-33-17Z"/><circle class="bird-eye" cx="45" cy="21" r="2.4"/><path class="bird-wing" d="M24 28c8-2 15 3 16 10-8 1-15-3-16-10Z"/><path class="bird-beak" d="M53 18l6 2-5 4-1-6Z"/></svg>
+      <span id="varqo-zzz" class="varqo-zzz">zzz</span>
+    </div>
+    <div class="varqo-panel">
+      <div class="varqo-energy"><span>انرژی</span><div class="bar"><i id="varqo-bar"></i></div><b id="varqo-val" class="tabular">۱۰۰</b></div>
+      <button id="varqo-feed" class="varqo-feed" title="بده تا قوت قلب بگیرد!">🌾 بغذار</button>
+    </div>
+  </div>
+
+  <!-- update bird toast -->
+  <div id="update-toast" class="update-toast hidden" dir="rtl">
+    <span class="ut-bird" aria-hidden="true">🕊</span>
+    <div class="ut-text"><b>نسخه‌ی جدید zora منتشر شد!</b><p id="ut-ver"></p></div>
+    <button id="ut-download" class="btn-primary">دانلود نسخه‌ی جدید</button>
+    <button id="ut-dismiss" class="icon-btn" title="بعداً">✕</button>
+  </div>
+
+  <!-- smart download overlay -->
+  <div id="dl-overlay" class="dl-overlay hidden" dir="rtl">
+    <div class="dl-card">
+      <h3 id="dl-title">دانلود نسخه‌ی جدید zora</h3>
+      <p class="dl-sub">بدون نیاز به ثبت‌نام یا حساب کاربری — سرورها را می‌سنحیم…</p>
+      <div id="dl-mirrors" class="dl-mirrors"></div>
+      <p class="dl-note">اگر دانلود شروع نشد، دکمه‌ی سرور دیگر را بزن. فایل حدود <span id="dl-size">…</span> است.</p>
+      <button id="dl-close" class="btn-secondary">بستن</button>
+    </div>
+  </div>
+
+</div>
+<script src="vendor/pdf.min.js"></script>
+<script src="app-core.js"></script>
+<script src="app-birds.js"></script>
+<script src="app-reader.js"></script>
+</body>
+</html>

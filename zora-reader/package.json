@@ -1,0 +1,59 @@
+{
+  "name": "zora-reader",
+  "productName": "ZORA Reader",
+  "version": "2.4.0",
+  "description": "کتاب‌خوان هوشمند مدارس ایران — zora reader",
+  "author": "zora team — ZAK & AXORA",
+  "license": "MIT",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "22.3.27",
+    "electron-builder": "24.13.3",
+    "pdfjs-dist": "3.11.174"
+  },
+  "dependencies": {
+    "adm-zip": "0.5.16"
+  },
+  "build": {
+    "appId": "ir.zora.reader",
+    "productName": "ZORA Reader",
+    "directories": {
+      "output": "dist",
+      "buildResources": "assets"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "books/**"
+    ],
+    "compression": "store",
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "zora reader",
+      "artifactName": "ZORA-Reader-Setup-${version}.exe",
+      "deleteAppDataOnUninstall": false
+    },
+    "portable": {
+      "artifactName": "ZORA-Reader-Portable-${version}.exe"
+    }
+  }
+}
