@@ -37,8 +37,18 @@
     "compression": "store",
     "win": {
       "target": [
-        { "target": "nsis", "arch": ["x64"] },
-        { "target": "portable", "arch": ["x64"] }
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
       ],
       "icon": "assets/icon.ico"
     },
@@ -55,5 +65,8 @@
     "portable": {
       "artifactName": "ZORA-Reader-Portable-${version}.exe"
     }
+  },
+  "allowScripts": {
+    "electron@22.3.27": true
   }
 }
