@@ -1,0 +1,60 @@
+{
+  "version": "2.4.0",
+  "codeName": "پرنده‌ی دانلود",
+  "releaseDate": "2026-10-21",
+  "releaseDateFa": "۲۹ مهر ۱۴۰۵",
+  "minSupported": "2.0.0",
+  "notes": [
+    "دانلود و آپدیت کاملاً بدون نیاز به گیت‌هاب یا ثبت‌نام — با انتخاب خودکار سریع‌ترین سرور",
+    "متن فارسی کتاب‌ها بی‌نقص: موتور رندر PDF.js + راست‌چین کامل",
+    "کاور اختصاصی هر درس با چهره‌ی بزرگان آن دانش: سعدی، خوارزمی، ابوعلی‌سینا و…",
+    "آیکون رسمی zora روی اپ، شورتکات دسکتاپ، منوی استارت و تسک‌بار",
+    "پرندهٔ نامه‌رسان با نکتهٔ علمی هر درس + پرندهٔ ورق‌زن با انرژی و غذا",
+    "ساعت هوشمند با تاریخ شمسی + تایمر تمرکز + جستجوی واقعی در متن (Ctrl+F)",
+    "پشتیبانی کامل ویندوز ۷ تا ویندوز ۱۱ — نصب بدون دسترسی مدیر"
+  ],
+  "nextTeaser": "پایهٔ دهم تا دوازدهم و پرندهٔ خبررسانِ به‌روزرسانیِ خودکار در نسخه‌های بعدی… 🌊",
+  "downloads": [
+    {
+      "id": "setup",
+      "filename": "ZORA-Reader-Setup-2.4.0.exe",
+      "label": "نسخه‌ی نصبی",
+      "sub": "پیشنهاد ما",
+      "desc": "همه‌ی کتاب‌های درسی داخلش هست. نصب راحت بدون نیاز به دسترسی مدیر؛ شورتکات دسکتاپ و منوی استارت هم خودش می‌سازد.",
+      "badge": "پیشنهادی",
+      "available": true,
+      "sizeMB": 1175,
+      "url": "https://github.com/amirhesamfathalian7-cmd/zora-site/releases/download/v2.4.0/ZORA-Reader-Setup-2.4.0.exe",
+      "sha256": "fcdb12f6c48d47af9ab98c5bcfd4cc5bf2d1f195b9fcaa874a59848681cd0cf5",
+      "mirrors": [
+        {
+          "id": "github",
+          "label": "سرور zora",
+          "sub": "دانلود مستقیم و بدون ثبت‌نام",
+          "url": "https://github.com/amirhesamfathalian7-cmd/zora-site/releases/download/v2.4.0/ZORA-Reader-Setup-2.4.0.exe"
+        }
+      ]
+    },
+    {
+      "id": "portable",
+      "filename": "ZORA-Reader-Portable-2.4.0.zip",
+      "label": "نسخه‌ی پرتابل",
+      "sub": "بدون نصب — فایل فشرده",
+      "desc": "دانلود کن، از حالت فشرده خارج کن و ZORA Reader.exe را اجرا کن — حتی از روی فلش‌مموری؛ همراه همیشگی.",
+      "badge": "بدون نصب",
+      "available": true,
+      "sizeMB": 1223,
+      "url": "https://github.com/amirhesamfathalian7-cmd/zora-site/releases/download/v2.4.0/ZORA-Reader-Portable-2.4.0.zip",
+      "sha256": "35a74169aaa5b30965cfe65f564e451c907a46d18ffb45a58243b55173124508",
+      "mirrors": [
+        {
+          "id": "github",
+          "label": "سرور zora",
+          "sub": "دانلود مستقیم و بدون ثبت‌نام",
+          "url": "https://github.com/amirhesamfathalian7-cmd/zora-site/releases/download/v2.4.0/ZORA-Reader-Portable-2.4.0.zip"
+        }
+      ]
+    }
+  ],
+  "anyAvailable": true
+}
